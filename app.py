@@ -4,6 +4,7 @@ from wtforms import StringField, SubmitField
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
+title = "Flask WTForms"
 
 class InfoForm(FlaskForm):
     breed = StringField("What breed our you?")
@@ -16,7 +17,7 @@ def index():
     if form.validate_on_submit():
         breed = form.breed.data
         form.breed.data = ''
-    return render_template('index.html', form=form, breed=breed)
+    return render_template('index.html', form=form, breed=breed, title=title)
 
     if __name__ == '__main__':
         app.run(debug=True)
