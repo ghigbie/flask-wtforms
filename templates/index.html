@@ -6,12 +6,12 @@
         <p>The breed you entered is {{ breed }}</p>
         <p>Update it in the form below: </p>
         {% endif %}
+        <form action=""
+            method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.breed.label }}{{ form.breed() }}
+            {{ form.submit() }}
+        </form>
     </div>
-    <form action=""
-          method="POST">
-          {{ form.hidden_tag() }}
-          {{ form.breed.label }}{{ form.breed() }}
-          {{ form.submit() }}
-    </form>
 {% endblock %}
 
